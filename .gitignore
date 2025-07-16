@@ -2,3 +2,8 @@ venv-onlineshop
 
 __pycache__/
 
+products/
+
+media/
+
+static/
