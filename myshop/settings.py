@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 import os
@@ -123,6 +124,20 @@ USE_TZ = True
 CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = '7hw9wxh2cwxy87rc'  # Merchant ID
+BRAINTREE_PUBLIC_KEY = '7k5h8w523rysg776'   # Public Key
+BRAINTREE_PRIVATE_KEY = '735d5b204aa1e4f9ed830d0ac3d43db8'  # Private key
+
+
+import braintree
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
 
 
 # Static files (CSS, JavaScript, Images)
