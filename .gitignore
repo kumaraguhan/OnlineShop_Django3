@@ -7,3 +7,6 @@ products/
 media/
 
 static/
+
+db.sqlite3
+
